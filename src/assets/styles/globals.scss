@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables";
+@import "./layout";
+
+html {
+  font-size: 16px; // text-base
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
