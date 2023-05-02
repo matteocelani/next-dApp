@@ -1,11 +1,17 @@
 @import "variables.scss";
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
+  flex: 1;
   padding: 0 1rem;
   display: flex;
   width: 100%;
   align-items: center;
-  min-height: 80vh;
 }
 
 .line {
@@ -30,10 +36,4 @@
 
 .dark .line {
   background-color: #fff;
-}
-
-@media screen and (min-width: $breakpoint-sm) {
-  .main {
-    min-height: 85vh;
-  }
 }

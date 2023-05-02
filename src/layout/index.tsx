@@ -56,10 +56,10 @@ export default function Layout({ children }: PropsWithChildren) {
   }
 
   return (
-    <Fragment>
+    <div className="wrapper">
       <Navbar />
       <main className="main">{children}</main>
       <Footer />
-    </Fragment>
+    </div>
   );
 }
