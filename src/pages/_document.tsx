@@ -22,9 +22,9 @@ export default function Document() {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333" />
-        <meta name="msapplication-TileColor" content="#2d89ef" />
-        <meta name="theme-color" content="#FF801F" />
+        <link rel="mask-icon" href="/favicon.ico" color="#333333" />
+        <meta name="msapplication-TileColor" content="#ADB5BD" />
+        <meta name="theme-color" content="#ADB5BD" />
       </Head>
       <body>
         <Main />

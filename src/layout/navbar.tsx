@@ -5,7 +5,7 @@ import Link from "next/link";
 //Importing RainbowKit
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-export default function Example() {
+export default function NavBar() {
   const [isNavVisible, setNavVisibility] = useState(false);
 
   const toggleNav = () => {

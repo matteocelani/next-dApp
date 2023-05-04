@@ -7,7 +7,7 @@ import {
   IoPlanet,
 } from "react-icons/io5";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-02 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-09">
       <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-300 sm:mb-0">
@@ -28,7 +28,7 @@ const Footer = () => {
           href="https://github.com/matteocelani"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 hover:text-black hover:dark:text-black hover:bg-gray-100 dark:hover:bg-gray-600"
         >
           <IoLogoGithub className="w-5 h-5" />
           <span className="sr-only">Github</span>
@@ -38,7 +38,7 @@ const Footer = () => {
           href="https://twitter.com/0xMashu"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 hover:text-blue-600 hover:dark:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-600"
         >
           <IoLogoTwitter className="w-5 h-5" />
           <span className="sr-only">Twitter</span>
@@ -48,7 +48,7 @@ const Footer = () => {
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 hover:text-primary hover:dark:text-primary hover:bg-gray-100 dark:hover:bg-gray-600"
         >
           <IoFlash className="w-5 h-5" />
           <span className="sr-only">Bitcoin Wallet</span>
@@ -58,7 +58,7 @@ const Footer = () => {
           href="https://mashu.dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
+          className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 hover:text-green-500 hover:dark:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600"
         >
           <IoPlanet className="w-5 h-5" />
           <span className="sr-only">Twitter</span>
@@ -66,6 +66,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
