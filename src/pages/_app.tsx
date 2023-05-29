@@ -27,6 +27,7 @@ import {
   dawnWallet,
   imTokenWallet,
   injectedWallet,
+  coinbaseWallet,
   mewWallet,
   omniWallet,
   safeWallet,
@@ -34,7 +35,7 @@ import {
   zerionWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 //Wagmi
-import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import {
   mainnet,
   goerli,
@@ -47,7 +48,7 @@ import { publicProvider } from "wagmi/providers/public";
 //Merge
 import merge from "lodash.merge";
 
-const { chains, provider, webSocketProvider } = configureChains(
+const { chains, publicClient } = configureChains(
   [
     mainnet,
     bsc,
@@ -79,6 +80,7 @@ const connectors = connectorsForWallets([
       dawnWallet({ chains }),
       imTokenWallet({ chains }),
       injectedWallet({ chains }),
+      coinbaseWallet({ chains, appName: "Next dApp" }), // "Next dApp" is the name of the app
       mewWallet({ chains }),
       omniWallet({ chains }),
       safeWallet({ chains }),
@@ -88,12 +90,11 @@ const connectors = connectorsForWallets([
   },
 ]);
 
-const wagmiClient = createClient({
+const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  provider,
-  webSocketProvider,
-});
+  publicClient
+})
 
 const theme = merge(lightTheme(), {
   colors: {
@@ -111,7 +112,7 @@ const theme = merge(lightTheme(), {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <WagmiConfig client={wagmiClient}>
+      <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           //modalSize="compact"
           coolMode={true}

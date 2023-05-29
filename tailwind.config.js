@@ -29,6 +29,9 @@ module.exports = {
 
         'primary': '#FF801F',
       },
+      maxWidth: {
+        'header-nav': '39rem',
+      },
     },
   },
   plugins: [],

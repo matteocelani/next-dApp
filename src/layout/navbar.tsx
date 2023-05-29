@@ -32,7 +32,7 @@ export default function NavBar() {
         </div>
 
         <div
-          className={`w-full md:block md:max-w-xl  ${
+          className={`w-full md:block md:max-w-header-nav ${
             isNavVisible ? "block" : "hidden"
           }`}
         >
