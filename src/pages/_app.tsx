@@ -60,9 +60,10 @@ const { chains, publicClient } = configureChains(
   [publicProvider()]
 );
 
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || "";
 const { wallets } = getDefaultWallets({
   appName: "Next dApp Template",
-  projectId: "YOUR_PROJECT_ID",
+  projectId,
   chains,
 });
 
@@ -71,21 +72,21 @@ const connectors = connectorsForWallets([
   {
     groupName: "Other",
     wallets: [
-      ledgerWallet({ chains }),
-      trustWallet({ chains }),
+      ledgerWallet({ projectId, chains }),
+      trustWallet({ projectId, chains }),
       braveWallet({ chains }),
-      okxWallet({ chains }),
-      argentWallet({ chains }),
+      okxWallet({ projectId, chains }),
+      argentWallet({ projectId, chains }),
       bitskiWallet({ chains }),
       dawnWallet({ chains }),
-      imTokenWallet({ chains }),
+      imTokenWallet({ projectId, chains }),
       injectedWallet({ chains }),
       coinbaseWallet({ chains, appName: "Next dApp" }), // "Next dApp" is the name of the app
       mewWallet({ chains }),
-      omniWallet({ chains }),
+      omniWallet({ projectId, chains }),
       safeWallet({ chains }),
       tahoWallet({ chains }),
-      zerionWallet({ chains }),
+      zerionWallet({ projectId, chains }),
     ],
   },
 ]);
@@ -93,8 +94,8 @@ const connectors = connectorsForWallets([
 const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  publicClient
-})
+  publicClient,
+});
 
 const theme = merge(lightTheme(), {
   colors: {
