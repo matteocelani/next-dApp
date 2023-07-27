@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, Fragment, useState, useEffect } from "react";
+import React, { PropsWithChildren, useState, useEffect } from "react";
 //React Redux
 import { useDispatch } from "react-redux";
 import {
@@ -27,27 +27,31 @@ export default function Layout({ children }: PropsWithChildren) {
   //Provider
   const publicClient = usePublicClient();
 
-  dispatch(setAccountAddress(address));
-  dispatch(setAccountSigner(walletClient));
-  dispatch(setAccountProvider(publicClient.chain));
-  //Account Balance ETH
-  address
-    ? fetchBalance({
-        address: address,
-      }).then((balance) => dispatch(setAccountBalance(balance)))
-    : dispatch(setAccountBalance(0));
-  //Account Ens Name
-  address && publicClient.chain.id === 1
-    ? fetchEnsName({
-        address: address,
-      }).then((ensName) => dispatch(setAccountEnsName(ensName)))
-    : dispatch(setAccountEnsName(null));
-
   useAccount({
     onDisconnect: () => {
       dispatch(disconnectAccount());
     },
   });
+
+  useEffect(() => {
+    //Account Balance ETH
+    address &&
+      fetchBalance({
+        address: address,
+      })
+        .then((balance) => dispatch(setAccountBalance(balance)))
+        .catch((e) => console.error("Error fetching balance", e));
+    //Account Ens Name
+    address && publicClient.chain.id === 1
+      ? fetchEnsName({
+          address: address,
+        }).then((ensName) => dispatch(setAccountEnsName(ensName)))
+      : dispatch(setAccountEnsName(null));
+
+    address && dispatch(setAccountAddress(address));
+    publicClient && dispatch(setAccountProvider(publicClient.chains?.[0]));
+    walletClient && dispatch(setAccountSigner(walletClient));
+  }, [dispatch, address, publicClient, walletClient]);
 
   useEffect(() => {
     setIsMounted(true);

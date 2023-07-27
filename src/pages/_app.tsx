@@ -48,7 +48,7 @@ import { publicProvider } from "wagmi/providers/public";
 //Merge
 import merge from "lodash.merge";
 
-const { chains, publicClient } = configureChains(
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     mainnet,
     bsc,
@@ -95,6 +95,7 @@ const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
   publicClient,
+  webSocketPublicClient,
 });
 
 const theme = merge(lightTheme(), {

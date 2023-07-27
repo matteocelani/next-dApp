@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { initialState as is } from "../../lib/types/reduxInterface";
+//Importing types
+import type { initialState as is } from "@/lib/types/reduxInterface";
+//Importing constants
+import { ETH_BALANCE } from "@/lib/constants";
 
 const initialState: is = {
-  address: undefined,
+  address: "0x0000000000000000000000000000000000000000",
   ensName: undefined,
-  balance: 0,
+  balance: ETH_BALANCE,
   provider: undefined,
   signer: undefined,
 };
