@@ -10,8 +10,10 @@ import {
   disconnectAccount,
 } from "@/redux/reducers/account";
 //Wagmi
-import { useAccount, usePublicClient, useWalletClient } from "wagmi";
+import { useAccount, usePublicClient } from "wagmi";
 import { fetchBalance, fetchEnsName } from "@wagmi/core";
+//Hooks
+import { useEthersSigner } from "@/hooks/useWagmi";
 //Importing Components
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -23,10 +25,11 @@ export default function Layout({ children }: PropsWithChildren) {
   //Account Address
   const { address } = useAccount();
   //Signer
-  const { data: walletClient } = useWalletClient();
+  const signer = useEthersSigner();
   //Provider
   const publicClient = usePublicClient();
 
+  //Disconnect Account
   useAccount({
     onDisconnect: () => {
       dispatch(disconnectAccount());
@@ -50,8 +53,8 @@ export default function Layout({ children }: PropsWithChildren) {
 
     address && dispatch(setAccountAddress(address));
     publicClient && dispatch(setAccountProvider(publicClient.chains?.[0]));
-    walletClient && dispatch(setAccountSigner(walletClient));
-  }, [dispatch, address, publicClient, walletClient]);
+    signer && dispatch(setAccountSigner(signer));
+  }, [dispatch, address, publicClient, signer]);
 
   useEffect(() => {
     setIsMounted(true);
