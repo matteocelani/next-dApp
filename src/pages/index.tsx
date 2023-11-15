@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 //Importing Next
 import Head from "next/head";
 //Importing Hooks
