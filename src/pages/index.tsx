@@ -1,18 +1,21 @@
 import { Fragment, useEffect } from "react";
 //Importing Next
 import Head from "next/head";
-//Importing Redux
-import { useSelector } from "react-redux";
-import { selectAccount } from "@/redux/reducers/account";
+//Importing Hooks
+import { useAccount } from "wagmi";
 //Importing Components
 import ThemeSwitch from "@/components/ThemeSwitch";
 
 export default function Home() {
-  const account = useSelector(selectAccount);
+  const { address, isConnected } = useAccount();
 
   useEffect(() => {
-    console.log(account);
-  }, [account]);
+    if (isConnected) {
+      console.log("Wallet address: ", address);
+    } else {
+      console.log("Not connected");
+    }
+  }, [address, isConnected]);
 
   return (
     <Fragment>

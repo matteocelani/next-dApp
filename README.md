@@ -1,10 +1,9 @@
 # Template for dApp built in Next.js
 
-Template for a decentralized application (dApp) built in [Next](https://nextjs.org). 
+Template for a decentralized application (dApp) built in [Next](https://nextjs.org).
 
 - [TypeScript](https://www.typescriptlang.org)
 - [Next 14](https://nextjs.org/blog/next-14)
-- [React Redux](https://react-redux.js.org)
 - [Sass](https://sass-lang.com)
 - [Tailwind CSS](https://tailwindcss.com)
 

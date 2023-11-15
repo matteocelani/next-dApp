@@ -1,7 +1,4 @@
 import type { AppProps } from "next/app";
-//React Redux
-import { Provider } from "react-redux";
-import { store } from "@/redux/store";
 //Importing Next Themes
 import { ThemeProvider } from "next-themes";
 //Importing Layout
@@ -121,11 +118,9 @@ export default function App({ Component, pageProps }: AppProps) {
           chains={chains}
           theme={theme}
         >
-          <Provider store={store}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </Provider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </RainbowKitProvider>
       </WagmiConfig>
     </ThemeProvider>
