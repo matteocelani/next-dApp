@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //Importing Next
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,16 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function NavBar() {
   const [isNavVisible, setNavVisibility] = useState(false);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);

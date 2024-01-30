@@ -1,9 +1,8 @@
 import React, { Fragment, useEffect } from "react";
-//Importing Next
-import Head from "next/head";
 //Importing Hooks
 import { useAccount } from "wagmi";
 //Importing Components
+import Meta from "@/components/Meta";
 import ThemeSwitch from "@/components/ThemeSwitch";
 
 export default function Home() {
@@ -19,13 +18,7 @@ export default function Home() {
 
   return (
     <Fragment>
-      <Head>
-        <title>Next.js dApp</title>
-        <meta
-          name="description"
-          content="Next.js dApp template with Tailwind CSS and RainbowKit built in TypeScript."
-        />
-      </Head>
+      <Meta />
 
       <div className="w-full flex flex-col">
         <h1 className="flex flex-col sm:flex-row justify-center items-center text-4xl font-bold ">

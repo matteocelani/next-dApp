@@ -36,15 +36,15 @@ import {
 } from "@rainbow-me/rainbowkit/wallets";
 //Wagmi
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
 import {
   mainnet,
-  goerli,
+  sepolia,
   bsc,
   polygon,
   arbitrum,
   avalanche,
 } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
 //Merge
 import merge from "lodash.merge";
 
@@ -55,12 +55,13 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     polygon,
     arbitrum,
     avalanche,
-    ...(process.env.ENABLE_TESTNETS === "true" ? [goerli] : []),
+    ...(process.env.ENABLE_TESTNETS === "true" ? [sepolia] : []),
   ],
   [publicProvider()]
 );
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || "";
+
 const { wallets } = getDefaultWallets({
   appName: "Next dApp Template",
   projectId,

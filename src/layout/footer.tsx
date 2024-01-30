@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 //Importing icon
 import {
   IoLogoGithub,
@@ -8,6 +8,16 @@ import {
 } from "react-icons/io5";
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <footer className="bg-02 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-09">
       <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-300 sm:mb-0">

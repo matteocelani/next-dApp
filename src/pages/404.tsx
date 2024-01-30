@@ -6,10 +6,15 @@ export default function Custom404() {
     <Fragment>
       <Head>
         <title>Next.js dApp | 404: This page could not be found.</title>
-        <meta
-          name="description"
-          content="Next.js dApp template with Tailwind CSS and RainbowKit built in TypeScript."
-        />
+
+        <meta name="image" content="/img/logo.png" />
+
+        {/* Open Graph */}
+        <meta property="og:image" content="/img/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/img/logo.png" />
       </Head>
 
       <div className="w-full flex flex-col">
