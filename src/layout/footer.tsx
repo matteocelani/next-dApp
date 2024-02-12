@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 //Importing icon
-import {
-  IoLogoGithub,
-  IoLogoTwitter,
-  IoFlash,
-  IoPlanet,
-} from "react-icons/io5";
+import { IoLogoGithub, IoFlash, IoPlanet } from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
@@ -50,7 +46,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-300 hover:text-blue-600 hover:dark:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-600"
         >
-          <IoLogoTwitter className="w-5 h-5" />
+          <FaXTwitter className="w-5 h-5" />
           <span className="sr-only">Twitter</span>
         </a>
         {/* Bitcoin Lightning */}

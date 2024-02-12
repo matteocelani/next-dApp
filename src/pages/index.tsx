@@ -21,7 +21,7 @@ export default function Home() {
       <Meta />
 
       <div className="w-full flex flex-col">
-        <h1 className="flex flex-col sm:flex-row justify-center items-center text-4xl font-bold ">
+        <h1 className="flex flex-col sm:flex-row justify-center items-center text-4xl font-bold">
           <a
             href="https://nextjs.org/"
             target="_blank"
@@ -38,6 +38,20 @@ export default function Home() {
           >
             Tailwind CSS
           </a>
+        </h1>
+        <h2 className="mt-2 flex flex-col sm:flex-row justify-center items-center text-3xl font-bold">
+          <a href="https://wagmi.sh/" target="_blank" rel="noopener noreferrer">
+            Wagmi
+          </a>
+          <span className="mx-2 hidden sm:block">+</span>
+          <a
+            className="mt-4 sm:mt-0"
+            href="https://tanstack.com/query/latest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TanStack Query
+          </a>
           <span className="mx-2 hidden sm:block">+</span>
           <a
             className="mt-4 sm:mt-0"
@@ -47,13 +61,8 @@ export default function Home() {
           >
             RainbowKit
           </a>
-        </h1>
-        <h2 className="text-2xl text-center mt-4">
-          with{" "}
-          <a href=" #" target="_blank" rel="noopener noreferrer">
-            TypeScript
-          </a>
         </h2>
+        <h3 className="text-2xl text-center mt-4">written in TypeScript</h3>
         <div className="flex justify-center mt-8">
           <ThemeSwitch />
         </div>
