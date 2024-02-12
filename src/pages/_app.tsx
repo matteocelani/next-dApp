@@ -1,102 +1,147 @@
 import React from "react";
 import type { AppProps } from "next/app";
-//Importing Next Themes
+// Importing Next Themes
 import { ThemeProvider } from "next-themes";
-//TanStack
+// TanStack
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-//Importing Layout
+// Importing Layout
 import Layout from "@/layout";
-//Importing Styles
+// Importing Styles
 import "@/assets/styles/globals.scss";
-//Raimbow Kit
+// Raimbow Kit
 import "@rainbow-me/rainbowkit/styles.css";
 import {
-  getDefaultWallets,
-  connectorsForWallets,
+  getDefaultConfig,
   RainbowKitProvider,
   lightTheme,
   Theme,
 } from "@rainbow-me/rainbowkit";
 import {
-  ledgerWallet,
-  trustWallet,
-  braveWallet,
-  okxWallet,
   argentWallet,
+  bitgetWallet,
+  bifrostWallet,
   bitskiWallet,
+  braveWallet,
+  coinbaseWallet,
+  coin98Wallet,
+  coreWallet,
   dawnWallet,
+  enkryptWallet,
+  foxWallet,
+  frameWallet,
+  frontierWallet,
   imTokenWallet,
   injectedWallet,
-  coinbaseWallet,
+  ledgerWallet,
+  metaMaskWallet,
   mewWallet,
+  okxWallet,
   omniWallet,
+  oneKeyWallet,
+  phantomWallet,
+  rabbyWallet,
+  rainbowWallet,
   safeWallet,
+  safeheronWallet,
   tahoWallet,
+  talismanWallet,
+  tokenaryWallet,
+  tokenPocketWallet,
+  trustWallet,
+  uniswapWallet,
+  walletConnectWallet,
+  xdefiWallet,
   zerionWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-//Wagmi
-import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
+// Wagmi
+import { WagmiProvider, http } from "wagmi";
 import {
-  mainnet,
-  sepolia,
-  bsc,
-  polygon,
   arbitrum,
-  avalanche,
+  base,
+  mainnet,
+  optimism,
+  polygon,
+  sepolia,
+  zora,
 } from "wagmi/chains";
-//Merge
+// Merge
 import merge from "lodash.merge";
-
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [
-    mainnet,
-    bsc,
-    polygon,
-    arbitrum,
-    avalanche,
-    ...(process.env.ENABLE_TESTNETS === "true" ? [sepolia] : []),
-  ],
-  [publicProvider()]
-);
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || "";
 
-const { wallets } = getDefaultWallets({
-  appName: "Next dApp Template",
-  projectId,
-  chains,
-});
-
-const connectors = connectorsForWallets([
-  ...wallets,
+//const { wallets } = getDefaultWallets();
+const wallets = [
+  //...getDefaultWallets().wallets,
   {
-    groupName: "Other",
+    groupName: "Recommended",
     wallets: [
-      ledgerWallet({ projectId, chains }),
-      trustWallet({ projectId, chains }),
-      braveWallet({ chains }),
-      okxWallet({ projectId, chains }),
-      argentWallet({ projectId, chains }),
-      bitskiWallet({ chains }),
-      dawnWallet({ chains }),
-      imTokenWallet({ projectId, chains }),
-      injectedWallet({ chains }),
-      coinbaseWallet({ chains, appName: "Next dApp" }), // "Next dApp" is the name of the app
-      mewWallet({ chains }),
-      omniWallet({ projectId, chains }),
-      safeWallet({ chains }),
-      tahoWallet({ chains }),
-      zerionWallet({ projectId, chains }),
+      metaMaskWallet,
+      rainbowWallet,
+      rabbyWallet,
+      ledgerWallet,
+      walletConnectWallet,
+      phantomWallet,
+      coinbaseWallet,
+      coin98Wallet,
+      trustWallet,
+      uniswapWallet,
     ],
   },
-]);
+  {
+    groupName: "Other Wallets",
+    wallets: [
+      argentWallet,
+      bitgetWallet,
+      bifrostWallet,
+      bitskiWallet,
+      braveWallet,
+      coreWallet,
+      dawnWallet,
+      enkryptWallet,
+      foxWallet,
+      frameWallet,
+      frontierWallet,
+      imTokenWallet,
+      injectedWallet,
+      mewWallet,
+      okxWallet,
+      omniWallet,
+      oneKeyWallet,
+      safeWallet,
+      safeheronWallet,
+      tahoWallet,
+      talismanWallet,
+      tokenaryWallet,
+      tokenPocketWallet,
+      xdefiWallet,
+      zerionWallet,
+    ],
+  },
+];
 
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-  webSocketPublicClient,
+// New API for configuring wagmi and RainbowKit
+const wagmiConfig = getDefaultConfig({
+  appName: "Next dApp Template",
+  projectId: projectId,
+  wallets: wallets,
+  chains: [
+    mainnet,
+    polygon,
+    optimism,
+    arbitrum,
+    base,
+    zora,
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
+  ],
+  transports: {
+    [mainnet.id]: http(),
+    [polygon.id]: http(),
+    [optimism.id]: http(),
+    [arbitrum.id]: http(),
+    [base.id]: http(),
+    [zora.id]: http(),
+  },
+  ssr: true, // If your dApp uses server side rendering (SSR)
 });
 
 const theme = merge(lightTheme(), {
@@ -118,20 +163,15 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider
-          //modalSize="compact"
-          coolMode={true}
-          chains={chains}
-          theme={theme}
-        >
-          <QueryClientProvider client={queryClient}>
+      <WagmiProvider config={wagmiConfig}>
+        <QueryClientProvider client={queryClient}>
+          <RainbowKitProvider theme={theme} showRecentTransactions={true}>
             <Layout>
               <Component {...pageProps} />
             </Layout>
-          </QueryClientProvider>
-        </RainbowKitProvider>
-      </WagmiConfig>
+          </RainbowKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
     </ThemeProvider>
   );
 }
