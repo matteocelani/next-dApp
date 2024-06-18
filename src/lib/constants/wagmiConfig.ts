@@ -1,6 +1,6 @@
 // Raimbow Kit
-import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import '@rainbow-me/rainbowkit/styles.css';
+import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import {
   argentWallet,
   bitgetWallet,
@@ -37,9 +37,9 @@ import {
   walletConnectWallet,
   xdefiWallet,
   zerionWallet,
-} from "@rainbow-me/rainbowkit/wallets";
+} from '@rainbow-me/rainbowkit/wallets';
 // Wagmi
-import { http } from "wagmi";
+import { http } from 'wagmi';
 import {
   arbitrum,
   base,
@@ -48,15 +48,15 @@ import {
   polygon,
   sepolia,
   zora,
-} from "wagmi/chains";
+} from 'wagmi/chains';
 
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || "";
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || '';
 
 //const { wallets } = getDefaultWallets();
 const wallets = [
   //...getDefaultWallets().wallets,
   {
-    groupName: "Recommended",
+    groupName: 'Recommended',
     wallets: [
       metaMaskWallet,
       rainbowWallet,
@@ -71,7 +71,7 @@ const wallets = [
     ],
   },
   {
-    groupName: "Other Wallets",
+    groupName: 'Other Wallets',
     wallets: [
       argentWallet,
       bitgetWallet,
@@ -103,7 +103,7 @@ const wallets = [
 ];
 
 export const wagmiConfig = getDefaultConfig({
-  appName: "Next dApp Template",
+  appName: 'Next dApp Template',
   projectId: projectId,
   wallets: wallets,
   chains: [
@@ -113,7 +113,7 @@ export const wagmiConfig = getDefaultConfig({
     arbitrum,
     base,
     zora,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
   ],
   transports: {
     [mainnet.id]: http(),

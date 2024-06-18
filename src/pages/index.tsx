@@ -1,18 +1,18 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from 'react';
 //Importing Hooks
-import { useAccount } from "wagmi";
+import { useAccount } from 'wagmi';
 //Importing Components
-import Meta from "@/components/Meta";
-import ThemeSwitch from "@/components/ThemeSwitch";
+import Meta from '@/components/Meta';
+import ThemeSwitch from '@/components/ThemeSwitch';
 
 export default function Home() {
   const { address, isConnected } = useAccount();
 
   useEffect(() => {
     if (isConnected) {
-      console.log("Wallet address: ", address);
+      console.log('Wallet address: ', address);
     } else {
-      console.log("Not connected");
+      console.log('Not connected');
     }
   }, [address, isConnected]);
 

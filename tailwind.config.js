@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    "./src/**/*.{,ts,tsx}",
-  ],
+  content: ['./src/**/*.{,ts,tsx}'],
   theme: {
     extend: {
       backgroundImage: {
@@ -12,9 +10,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       screens: {
-        'xxs': '256px',
-        'xs': '384px',
-        's': '512px',
+        xxs: '256px',
+        xs: '384px',
+        s: '512px',
       },
       colors: {
         '01': '#F8F9FA',
@@ -27,7 +25,7 @@ module.exports = {
         '08': '#343A40',
         '09': '#212529',
 
-        'primary': '#FF801F',
+        primary: '#FF801F',
       },
       maxWidth: {
         'header-nav': '39rem',
@@ -35,4 +33,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

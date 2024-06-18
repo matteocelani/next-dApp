@@ -1,33 +1,33 @@
-import React from "react";
-import type { AppProps } from "next/app";
+import React from 'react';
+import type { AppProps } from 'next/app';
 // Importing Next Themes
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from 'next-themes';
 // TanStack
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // Importing Layout
-import Layout from "@/layout";
+import Layout from '@/layout';
 // Importing Styles
-import "@/assets/styles/globals.scss";
+import '@/assets/styles/globals.scss';
 // Raimbow Kit
-import "@rainbow-me/rainbowkit/styles.css";
-import { RainbowKitProvider, lightTheme, Theme } from "@rainbow-me/rainbowkit";
+import '@rainbow-me/rainbowkit/styles.css';
+import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
 // Wagmi
-import { WagmiProvider } from "wagmi";
+import { WagmiProvider } from 'wagmi';
 // Wagmi Config
-import { wagmiConfig } from "@/lib/constants/wagmiConfig";
+import { wagmiConfig } from '@/lib/constants/wagmiConfig';
 // Merge
-import merge from "lodash.merge";
+import merge from 'lodash.merge';
 
 const theme = merge(lightTheme(), {
   colors: {
-    accentColor: "#FF801F",
-    accentColorForeground: "#fff",
-    actionButtonSecondaryBackground: "#DADDD8",
-    connectButtonBackground: "#fff",
-    connectButtonBackgroundError: "#fff",
-    connectButtonInnerBackground: "#fff",
-    connectButtonText: "#000",
-    connectButtonTextError: "#FF494A",
+    accentColor: '#FF801F',
+    accentColorForeground: '#fff',
+    actionButtonSecondaryBackground: '#DADDD8',
+    connectButtonBackground: '#fff',
+    connectButtonBackgroundError: '#fff',
+    connectButtonInnerBackground: '#fff',
+    connectButtonText: '#000',
+    connectButtonTextError: '#FF494A',
   },
 } as Theme);
 

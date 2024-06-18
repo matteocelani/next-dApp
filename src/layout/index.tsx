@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from 'react';
 //Importing Components
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from './navbar';
+import Footer from './footer';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (

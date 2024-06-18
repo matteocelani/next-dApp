@@ -1,12 +1,12 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 import {
   BrowserProvider,
   JsonRpcSigner,
   FallbackProvider,
   JsonRpcProvider,
-} from "ethers";
-import { type Config, useConnectorClient, useClient } from "wagmi";
-import type { Account, Chain, Client, Transport } from "viem";
+} from 'ethers';
+import { type Config, useConnectorClient, useClient } from 'wagmi';
+import type { Account, Chain, Client, Transport } from 'viem';
 
 export function walletClientToSigner(
   client: Client<Transport, Chain, Account>
@@ -38,7 +38,7 @@ export function publicClientToProvider(client: Client<Transport, Chain>) {
     name: chain.name,
     ensAddress: chain.contracts?.ensRegistry?.address,
   };
-  if (transport.type === "fallback") {
+  if (transport.type === 'fallback') {
     const providers = (transport.transports as ReturnType<Transport>[]).map(
       ({ value }) => new JsonRpcProvider(value?.url, network)
     );

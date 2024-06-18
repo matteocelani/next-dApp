@@ -1,7 +1,7 @@
 // Importing Next
-import Head from "next/head";
+import Head from 'next/head';
 // Importing Const
-import { metadata } from "@/lib/constants";
+import { metadata } from '@/lib/constants';
 
 export default function Meta() {
   return (

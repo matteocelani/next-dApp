@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 //Importing Next
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 //Importing RainbowKit
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function NavBar() {
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -32,7 +32,7 @@ export default function NavBar() {
           <div
             onClick={toggleNav}
             className={`hamburger flex flex-col justify-between w-6 h-5 cursor-pointer ${
-              isNavVisible ? "open" : ""
+              isNavVisible ? 'open' : ''
             }`}
           >
             <span className="line"></span>
@@ -43,7 +43,7 @@ export default function NavBar() {
 
         <div
           className={`w-full md:block md:max-w-header-nav ${
-            isNavVisible ? "block" : "hidden"
+            isNavVisible ? 'block' : 'hidden'
           }`}
         >
           <ul className="p-0 mt-0 mb-6 flex flex-col w-full md:m-0 md:flex-row md:justify-around">
