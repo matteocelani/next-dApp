@@ -26,9 +26,17 @@ module.exports = {
         '09': '#212529',
 
         primary: '#FF801F',
+        secondary: '#ff9500',
+        warning: '#ffcc00',
+        danger: '#ff3b30',
+        success: '#34c759',
+        info: '#32ade6',
       },
       maxWidth: {
         'header-nav': '39rem',
+      },
+      height: {
+        sidebar: 'calc(100dvh - 5rem)',
       },
     },
   },

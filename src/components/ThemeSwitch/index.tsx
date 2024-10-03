@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 //Importing icon
 import { HiSun, HiMoon } from 'react-icons/hi';
 
-export default function ThemeSwitch() {
+export default function ThemeSwitch({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme, setTheme } = useTheme();
 
@@ -22,7 +22,9 @@ export default function ThemeSwitch() {
 
   return (
     <button
-      className="rounded-full p-1.5 bg-gray-300 dark:bg-gray-500"
+      className={
+        `w-fit rounded-full p-1.5 bg-gray-300 dark:bg-gray-500 ` + className
+      }
       title="Switch Theme"
       onClick={switchTheme}
     >
