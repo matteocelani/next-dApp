@@ -23,6 +23,14 @@
     "react"
   ],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off"
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "./*",
+          "../*"
+        ] // Restricts `./` and `../` imports to enforce consistent use of absolute imports with aliases.
+      }
+    ]
   }
 }
