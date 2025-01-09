@@ -11,7 +11,7 @@ import { NavigationProps } from '@/lib/types/layout';
 import { navigation } from '@/lib/constants/navigation';
 
 export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
-  const pathname = usePathname(); // Aggiorniamo questo
+  const pathname = usePathname();
 
   return (
     <aside
