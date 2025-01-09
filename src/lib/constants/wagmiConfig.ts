@@ -1,42 +1,20 @@
 // Raimbow Kit
 import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { getDefaultConfig, WalletList } from '@rainbow-me/rainbowkit';
 import {
-  argentWallet,
-  bitgetWallet,
-  bifrostWallet,
-  bitskiWallet,
-  braveWallet,
   coinbaseWallet,
   coin98Wallet,
-  coreWallet,
-  dawnWallet,
-  enkryptWallet,
-  foxWallet,
-  frameWallet,
-  frontierWallet,
-  imTokenWallet,
   injectedWallet,
   ledgerWallet,
   metaMaskWallet,
-  mewWallet,
   okxWallet,
-  omniWallet,
-  oneKeyWallet,
   phantomWallet,
   rabbyWallet,
   rainbowWallet,
   safeWallet,
-  safeheronWallet,
-  tahoWallet,
-  talismanWallet,
-  tokenaryWallet,
-  tokenPocketWallet,
   trustWallet,
   uniswapWallet,
   walletConnectWallet,
-  xdefiWallet,
-  zerionWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 // Wagmi
 import { http } from 'wagmi';
@@ -47,13 +25,17 @@ import {
   optimism,
   polygon,
   sepolia,
-  zora,
 } from 'wagmi/chains';
 
+/**
+ * WalletConnect Project ID
+ * @description Required for all dApps using WalletConnect. Get your free projectId at
+ * @see https://cloud.walletconnect.com/sign-in
+ */
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_ID || '';
 
 //const { wallets } = getDefaultWallets();
-const wallets = [
+const wallets: WalletList = [
   //...getDefaultWallets().wallets,
   {
     groupName: 'Recommended',
@@ -63,41 +45,19 @@ const wallets = [
       rabbyWallet,
       ledgerWallet,
       walletConnectWallet,
-      phantomWallet,
-      coinbaseWallet,
-      coin98Wallet,
-      trustWallet,
-      uniswapWallet,
     ],
   },
   {
     groupName: 'Other Wallets',
     wallets: [
-      argentWallet,
-      bitgetWallet,
-      bifrostWallet,
-      bitskiWallet,
-      braveWallet,
-      coreWallet,
-      dawnWallet,
-      enkryptWallet,
-      foxWallet,
-      frameWallet,
-      frontierWallet,
-      imTokenWallet,
+      phantomWallet,
+      coinbaseWallet,
+      coin98Wallet,
+      trustWallet,
+      uniswapWallet,
       injectedWallet,
-      mewWallet,
       okxWallet,
-      omniWallet,
-      oneKeyWallet,
       safeWallet,
-      safeheronWallet,
-      tahoWallet,
-      talismanWallet,
-      tokenaryWallet,
-      tokenPocketWallet,
-      xdefiWallet,
-      zerionWallet,
     ],
   },
 ];
@@ -112,16 +72,12 @@ export const wagmiConfig = getDefaultConfig({
     optimism,
     arbitrum,
     base,
-    zora,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
   ],
   transports: {
     [mainnet.id]: http(),
-    [polygon.id]: http(),
-    [optimism.id]: http(),
     [arbitrum.id]: http(),
     [base.id]: http(),
-    [zora.id]: http(),
   },
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
