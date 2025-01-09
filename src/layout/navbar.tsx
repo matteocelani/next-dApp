@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+'use client';
+
 //Importing Next
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,16 +9,6 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { NavigationProps } from '@/lib/types/layout';
 
 export default function NavBar({ isOpen, toggleOpen }: NavigationProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <header className="px-4 xs:px-6 md:px-8 bg-02 shadow-lg dark:bg-09">
       <nav className="flex items-center justify-between mx-auto">

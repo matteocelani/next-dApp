@@ -1,6 +1,8 @@
+'use client';
+
 //Importing Next
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 //Importing components
 import ThemeSwitch from '@/components/ThemeSwitch';
 // Import Types
@@ -9,7 +11,7 @@ import { NavigationProps } from '@/lib/types/layout';
 import { navigation } from '@/lib/constants/navigation';
 
 export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <aside
@@ -26,7 +28,7 @@ export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
                 href={item.href}
                 className={`flex items-center px-6 py-4 rounded-lg 
                     ${
-                      router.pathname === item.href
+                      pathname === item.href
                         ? 'bg-shadow-primary'
                         : 'hover:bg-gray5-light dark:hover:bg-gray5-dark'
                     }`}
