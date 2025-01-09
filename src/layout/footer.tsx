@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 //Importing icon
 import { IoLogoGithub, IoFlash, IoPlanet } from 'react-icons/io5';

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { PropsWithChildren, useState } from 'react';
 //Importing Components
 import Navbar from '@/layout/navbar';
