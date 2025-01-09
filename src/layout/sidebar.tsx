@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 //Importing components
-import ThemeSwitch from '@/components/ThemeSwitch';
+import ThemeSwitch from '@/components/features/ThemeSwitch';
 // Import Types
 import { NavigationProps } from '@/lib/types/layout';
 // Import Navigation
