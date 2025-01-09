@@ -1,4 +1,3 @@
-// Importing icons
 import { IoLogoGithub, IoPlanet } from 'react-icons/io5';
 
 export const navigation = [

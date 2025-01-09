@@ -23,6 +23,76 @@
     "react"
   ],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off"
+    // Restricts `./` and `../` imports to enforce consistent use of absolute imports with aliases.
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "./*",
+          "../*"
+        ]
+      }
+    ],
+    // Enforce import order to group imports by type and path.
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@rainbow-me/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/hooks/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/components/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "react-icons/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/lib/constants/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/lib/types/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }

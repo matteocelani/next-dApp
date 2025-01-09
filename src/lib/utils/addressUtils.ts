@@ -8,10 +8,3 @@ export function getShortAddress(address: string | `0x${string}`): string {
 
   return `${start}…${end}`;
 }
-
-export function isEthAddress(address?: string | `0x${string}`): boolean {
-  if (!address) return false;
-
-  const regex = /^0x[a-fA-F0-9]{40}$/;
-  return regex.test(address);
-}

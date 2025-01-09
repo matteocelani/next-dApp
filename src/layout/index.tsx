@@ -1,10 +1,9 @@
 'use client';
 
 import React, { PropsWithChildren, useState } from 'react';
-//Importing Components
+import Footer from '@/layout/footer';
 import Navbar from '@/layout/navbar';
 import Sidebar from '@/layout/sidebar';
-import Footer from '@/layout/footer';
 
 export default function Layout({ children }: PropsWithChildren) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

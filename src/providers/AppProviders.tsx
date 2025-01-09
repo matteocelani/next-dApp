@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { ThemeProvider } from 'next-themes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
-import { WagmiProvider } from 'wagmi';
-import { wagmiConfig } from '@/lib/constants/wagmiConfig';
 import merge from 'lodash.merge';
+import { ThemeProvider } from 'next-themes';
+import { WagmiProvider } from 'wagmi';
+import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
+import { wagmiConfig } from '@/lib/constants/wagmiConfig';
 
 const theme = merge(lightTheme(), {
   colors: {
@@ -23,7 +23,7 @@ const theme = merge(lightTheme(), {
 
 const queryClient = new QueryClient();
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"

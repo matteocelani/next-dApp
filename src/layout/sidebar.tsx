@@ -1,14 +1,10 @@
 'use client';
 
-//Importing Next
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-//Importing components
-import ThemeSwitch from '@/components/ThemeSwitch';
-// Import Types
-import { NavigationProps } from '@/lib/types/layout';
-// Import Navigation
+import ThemeSwitch from '@/components/features/ThemeSwitch';
 import { navigation } from '@/lib/constants/navigation';
+import { NavigationProps } from '@/lib/types/layout';
 
 export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
   const pathname = usePathname();

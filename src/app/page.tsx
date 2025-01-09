@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import ThemeSwitch from '@/components/features/ThemeSwitch';
 
 export default function Home() {
   const { address, isConnected } = useAccount();

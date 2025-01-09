@@ -2,7 +2,7 @@
   "name": "next-dapp",
   "description": "Next Web3 dApp template",
   "author": "Matteo Celani",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "scripts": {
     "dev": "next dev",

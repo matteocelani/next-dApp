@@ -1,8 +1,7 @@
 'use client';
 
-//Importing icon
-import { IoLogoGithub, IoFlash, IoPlanet } from 'react-icons/io5';
 import { FaXTwitter } from 'react-icons/fa6';
+import { IoLogoGithub, IoFlash, IoPlanet } from 'react-icons/io5';
 
 export default function Footer() {
   return (

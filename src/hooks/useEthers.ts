@@ -1,3 +1,27 @@
+/**
+ * @file useEthers.ts
+ * @description Ethers.js Adapter Hooks for Wagmi
+ *
+ * ⚠️ IMPORTANT NOTE ⚠️
+ * These hooks provide Ethers.js compatibility for projects using Wagmi.
+ * While Viem is the recommended library for Wagmi interactions, these adapters
+ * are provided for cases where Ethers.js is still needed, such as:
+ *
+ * - Gradual migration from Ethers.js to Viem
+ * - Integration with third-party libraries that require Ethers.js
+ * - Personal preference for Ethers.js
+ *
+ * If your project doesn't specifically require Ethers.js, it's recommended
+ * to use Viem directly with Wagmi for better performance and compatibility.
+ *
+ * @see https://wagmi.sh/react/guides/ethers
+ * @see https://viem.sh
+ *
+ * These hooks provide two main utilities:
+ * - useEthersSigner: Converts a Wagmi Wallet Client to an Ethers.js Signer
+ * - useEthersProvider: Converts a Wagmi Public Client to an Ethers.js Provider
+ */
+
 import { useMemo } from 'react';
 import {
   BrowserProvider,
@@ -5,8 +29,8 @@ import {
   FallbackProvider,
   JsonRpcProvider,
 } from 'ethers';
-import { type Config, useConnectorClient, useClient } from 'wagmi';
 import type { Account, Chain, Client, Transport } from 'viem';
+import { type Config, useConnectorClient, useClient } from 'wagmi';
 
 export function walletClientToSigner(
   client: Client<Transport, Chain, Account>
