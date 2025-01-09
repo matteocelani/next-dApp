@@ -1,5 +1,13 @@
-// Raimbow Kit
 import '@rainbow-me/rainbowkit/styles.css';
+import { http } from 'wagmi';
+import {
+  arbitrum,
+  base,
+  mainnet,
+  optimism,
+  polygon,
+  sepolia,
+} from 'wagmi/chains';
 import { getDefaultConfig, WalletList } from '@rainbow-me/rainbowkit';
 import {
   coinbaseWallet,
@@ -16,16 +24,6 @@ import {
   uniswapWallet,
   walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets';
-// Wagmi
-import { http } from 'wagmi';
-import {
-  arbitrum,
-  base,
-  mainnet,
-  optimism,
-  polygon,
-  sepolia,
-} from 'wagmi/chains';
 
 /**
  * WalletConnect Project ID

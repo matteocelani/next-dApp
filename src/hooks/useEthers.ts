@@ -29,8 +29,8 @@ import {
   FallbackProvider,
   JsonRpcProvider,
 } from 'ethers';
-import { type Config, useConnectorClient, useClient } from 'wagmi';
 import type { Account, Chain, Client, Transport } from 'viem';
+import { type Config, useConnectorClient, useClient } from 'wagmi';
 
 export function walletClientToSigner(
   client: Client<Transport, Chain, Account>

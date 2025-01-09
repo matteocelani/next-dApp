@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-//Importing icon
 import { HiSun, HiMoon } from 'react-icons/hi';
 
 export default function ThemeSwitch({ className }: { className?: string }) {

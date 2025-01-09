@@ -1,11 +1,8 @@
 'use client';
 
-//Importing Next
 import Image from 'next/image';
 import Link from 'next/link';
-//Importing RainbowKit
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-// Import Types
 import { NavigationProps } from '@/lib/types/layout';
 
 export default function NavBar({ isOpen, toggleOpen }: NavigationProps) {
