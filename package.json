@@ -14,8 +14,6 @@
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.1",
     "@tanstack/react-query": "^5.63.0",
-    "@tanstack/react-query-devtools": "^5.63.0",
-    "eslint-config-next": "^15.1.4",
     "ethers": "^6.13.5",
     "next": "^15.1.4",
     "next-themes": "^0.4.4",
@@ -26,16 +24,13 @@
     "wagmi": "^2.14.7"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.62.16",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.17.12",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.3",
+    "eslint-config-next": "^15.1.4",
     "lodash.merge": "^4.6.2",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
