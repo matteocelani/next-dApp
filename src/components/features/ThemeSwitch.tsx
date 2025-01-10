@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { HiSun, HiMoon } from 'react-icons/hi';
 
 export default function ThemeSwitch({ className }: { className?: string }) {
-  const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   function switchTheme(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();

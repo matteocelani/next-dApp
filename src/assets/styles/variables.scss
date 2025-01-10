@@ -1,9 +1,71 @@
+/**
+ * Responsive Breakpoint System
+ * A percentage-based scale for consistent responsive design
+ */
+
 // Responsive Breakpoints
-$breakpoint-xxs: 256px; //20%
-$breakpoint-xs: 384px; //30%
-$breakpoint-s: 512px; //40%
-$breakpoint-sm: 640px; //50%
-$breakpoint-md: 768px; //60%
-$breakpoint-lg: 1024px; //80%
-$breakpoint-xl: 1280px; //100%
-$breakpoint-xxl: 1536px; //120%
+$breakpoint-xxs: 256px;
+$breakpoint-xs: 384px;
+$breakpoint-s: 512px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+/**
+ * Design System Color Palette
+ * A comprehensive color system with light and dark mode variants.
+ * 
+ * Features:
+ * - Complete grayscale system for UI elements and typography
+ * - Vibrant system colors for primary actions and status indicators
+ * - Dark/Light mode variants for all colors
+ */
+
+//Light Mode
+$almost-black: #333333;
+$gray-light: #8e8e93;
+$gray2-light: #aeaeae;
+$gray3-light: #c7c7cc;
+$gray4-light: #d1d1d6;
+$gray5-light: #e5e5ea;
+$gray6-light: #f2f2f7;
+$gray7-light: #fcfcfd;
+
+//Dark Mode
+$almost-white: #cccccc;
+$gray-dark: #8e8e93;
+$gray2-dark: #636366;
+$gray3-dark: #48484a;
+$gray4-dark: #3a3a3c;
+$gray5-dark: #2c2c2e;
+$gray6-dark: #1c1c1e;
+$gray7-dark: #141415;
+
+//System Colors - Light Mode
+$red-light: #ff3b30;
+$orange-light: #ff9500;
+$yellow-light: #ffcc00;
+$green-light: #34c759;
+$mint-light: #00c7be;
+$teal-light: #30b0c7;
+$cyan-light: #32ade6;
+$blue-light: #007aff;
+$indigo-light: #5856d6;
+$purple-light: #af52de;
+$pink-light: #ff2d55;
+$brown-light: #a5845e;
+
+//System Colors - Dark Mode
+$red-dark: #ff453a;
+$orange-dark: #ff9f0a;
+$yellow-dark: #ffd626;
+$green-dark: #30d158;
+$mint-dark: #66d4cf;
+$teal-dark: #40c8e0;
+$cyan-dark: #64d2ff;
+$blue-dark: #0a84ff;
+$indigo-dark: #5e5ce6;
+$purple-dark: #bf5af2;
+$pink-dark: #ff3763;
+$brown-dark: #ac8e68;
