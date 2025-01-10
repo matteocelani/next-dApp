@@ -1,6 +1,11 @@
-import { IoLogoGithub, IoPlanet } from 'react-icons/io5';
+import { IoHome, IoLogoGithub, IoPlanet } from 'react-icons/io5';
 
 export const navigation = [
+  {
+    name: 'Home',
+    href: '/',
+    icon: IoHome,
+  },
   {
     name: 'GitHub',
     href: 'https://github.com/matteocelani',
