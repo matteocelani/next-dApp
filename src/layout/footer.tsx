@@ -5,7 +5,7 @@ import { IoLogoGithub, IoFlash, IoPlanet } from 'react-icons/io5';
 
 export default function Footer() {
   return (
-    <footer className="bg-02 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-09">
+    <footer className="bg-neutral-100 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-neutral-800">
       <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-300 sm:mb-0">
         &copy; {new Date().getFullYear()}{' '}
         <a

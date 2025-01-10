@@ -7,7 +7,7 @@ import { NavigationProps } from '@/lib/types/layout';
 
 export default function NavBar({ isOpen, toggleOpen }: NavigationProps) {
   return (
-    <header className="px-4 xs:px-6 md:px-8 bg-02 shadow-lg dark:bg-09">
+    <header className="px-4 xs:px-6 md:px-8 bg-neutral-100 shadow-lg dark:bg-neutral-800">
       <nav className="flex items-center justify-between mx-auto">
         <Link href="/" target="_self" className="py-4 pr-4">
           <Image src="/img/logo.png" alt="logo" width={60} height={60} />

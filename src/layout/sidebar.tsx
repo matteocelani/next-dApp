@@ -14,7 +14,7 @@ export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
       id="sidebar"
       className={`z-50 mt-24 min-w-full h-sidebar transition-transform p-4 fixed overflow-y-auto 
           ${isOpen ? '-translate-x-0 sm:-translate-x-full shadow-xl' : '-translate-x-full'} 
-          duration-300 bg-01 dark:bg-black`}
+          duration-300 bg-neutral-50 dark:bg-black`}
     >
       <div className="relative h-full p-4 rounded-xl flex flex-col justify-between overflow-y-auto">
         <ul className="space-y-2 font-medium">
