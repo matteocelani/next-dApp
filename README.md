@@ -10,7 +10,7 @@ Template for a decentralized application (dApp) built in [Next](https://nextjs.o
 
 ### Web3 Packages
 
-- [ethers](https://docs.ethers.org/v5/)
+- [viem](https://viem.sh/)
 - [rainbowkit](https://www.rainbowkit.com)
 - [wagmi](https://wagmi.sh)
 
