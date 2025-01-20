@@ -9,8 +9,10 @@ export default function Home() {
 
   useEffect(() => {
     if (isConnected) {
+      // eslint-disable-next-line no-console
       console.log('Wallet address: ', address);
     } else {
+      // eslint-disable-next-line no-console
       console.log('Not connected');
     }
   }, [address, isConnected]);
