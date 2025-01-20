@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { type JSX } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import merge from 'lodash.merge';
 import { ThemeProvider } from 'next-themes';
@@ -23,7 +23,11 @@ const theme = merge(lightTheme(), {
 
 const queryClient = new QueryClient();
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+type ProvidersProps = {
+  children: JSX.Element | JSX.Element[] | string | null;
+};
+
+export default function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       attribute="class"
