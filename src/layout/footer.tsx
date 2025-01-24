@@ -1,34 +1,6 @@
 'use client';
 
-import { FaXTwitter } from 'react-icons/fa6';
-import { IoLogoGithub, IoFlash, IoPlanet } from 'react-icons/io5';
-
-const socialLinks = [
-  {
-    href: 'https://github.com/matteocelani',
-    icon: <IoLogoGithub className="w-5 h-5" />,
-    label: 'Github',
-    hoverColor: 'hover:text-black hover:dark:text-black',
-  },
-  {
-    href: 'https://twitter.com/0xMashu',
-    icon: <FaXTwitter className="w-5 h-5" />,
-    label: 'Twitter',
-    hoverColor: 'hover:text-blue-600 hover:dark:text-blue-600',
-  },
-  {
-    href: '#',
-    icon: <IoFlash className="w-5 h-5" />,
-    label: 'Bitcoin Wallet',
-    hoverColor: 'hover:text-primary hover:dark:text-primary',
-  },
-  {
-    href: 'https://mashu.dev',
-    icon: <IoPlanet className="w-5 h-5" />,
-    label: 'Website',
-    hoverColor: 'hover:text-green-500 hover:dark:text-green-500',
-  },
-];
+import { socialLinks } from '@/lib/constants/navigation';
 
 export default function Footer() {
   return (

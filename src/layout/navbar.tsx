@@ -3,18 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { navLinks } from '@/lib/constants/navigation';
 import { NavigationProps } from '@/lib/types/layout';
-
-const navLinks = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/matteocelani/next-dApp',
-  },
-  {
-    label: 'Website',
-    href: 'https://www.mashu.dev/',
-  },
-];
 
 export default function NavBar({ isOpen, toggleOpen }: NavigationProps) {
   return (
