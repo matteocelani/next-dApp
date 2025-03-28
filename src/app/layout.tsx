@@ -1,7 +1,7 @@
 import { metadata } from '@/app/metadata';
 import Layout from '@/layout';
 import Providers from '@/providers/AppProviders';
-import '@/assets/styles/globals.scss';
+import '@/assets/styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
 
 export { metadata };
