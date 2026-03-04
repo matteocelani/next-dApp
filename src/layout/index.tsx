@@ -1,16 +1,16 @@
 'use client';
 
 import React, { PropsWithChildren, useState } from 'react';
-import Footer from '@/layout/footer';
-import Navbar from '@/layout/navbar';
-import Sidebar from '@/layout/sidebar';
+import { Footer } from '@/layout/footer';
+import { NavBar } from '@/layout/navbar';
+import { Sidebar } from '@/layout/sidebar';
 
-export default function Layout({ children }: PropsWithChildren) {
+export function Layout({ children }: PropsWithChildren) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar
+      <NavBar
         isOpen={isSidebarOpen}
         toggleOpen={() => setIsSidebarOpen(!isSidebarOpen)}
       />

@@ -27,7 +27,7 @@ type ProvidersProps = {
   children: JSX.Element | JSX.Element[] | string | null;
 };
 
-export default function Providers({ children }: ProvidersProps) {
+export function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       attribute="class"

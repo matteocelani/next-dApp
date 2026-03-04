@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ThemeSwitch from '@/components/features/ThemeSwitch';
+import { ThemeSwitch } from '@/components/features/ThemeSwitch';
 import { navigation } from '@/lib/constants/navigation';
 import { NavigationProps } from '@/lib/types/layout';
 
-export default function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
+export function Sidebar({ isOpen, toggleOpen }: NavigationProps) {
   const pathname = usePathname();
 
   return (

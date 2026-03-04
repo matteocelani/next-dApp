@@ -2,7 +2,7 @@
 
 import { socialLinks } from '@/lib/constants/navigation';
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-neutral-100 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 dark:bg-neutral-800">
       <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-300 sm:mb-0">
