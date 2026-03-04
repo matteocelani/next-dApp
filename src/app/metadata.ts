@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: [{ name: siteConfig.author }],
-  manifest: '/site.webmanifest',
   icons: {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
