@@ -14,7 +14,7 @@ export default function ThemeSwitch({ className }: { className?: string }) {
 
   function switchTheme(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   if (!mounted) {

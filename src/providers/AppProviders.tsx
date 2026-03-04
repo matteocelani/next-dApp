@@ -1,11 +1,11 @@
 'use client';
 
 import { type JSX } from 'react';
+import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import merge from 'lodash.merge';
 import { ThemeProvider } from 'next-themes';
 import { WagmiProvider } from 'wagmi';
-import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
 import { wagmiConfig } from '@/lib/constants/wagmiConfig';
 
 const theme = merge(lightTheme(), {

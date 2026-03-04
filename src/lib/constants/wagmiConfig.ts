@@ -1,9 +1,6 @@
 import '@rainbow-me/rainbowkit/styles.css';
-import { http, fallback } from 'wagmi';
-import { arbitrum, base, mainnet, sepolia } from 'wagmi/chains';
 import { getDefaultConfig, WalletList } from '@rainbow-me/rainbowkit';
 import {
-  coinbaseWallet,
   coin98Wallet,
   injectedWallet,
   ledgerWallet,
@@ -17,6 +14,8 @@ import {
   uniswapWallet,
   walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets';
+import { http, fallback } from 'wagmi';
+import { arbitrum, base, mainnet, sepolia } from 'wagmi/chains';
 
 /**
  * WalletConnect Project ID
@@ -74,7 +73,6 @@ const wallets: WalletList = [
     groupName: 'Other Wallets',
     wallets: [
       phantomWallet,
-      coinbaseWallet,
       coin98Wallet,
       trustWallet,
       uniswapWallet,
