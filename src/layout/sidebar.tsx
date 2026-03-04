@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ThemeSwitch } from '@/components/features/ThemeSwitch';
+import { ThemeSwitch } from '@/components/global/ThemeSwitch';
 import { navigation } from '@/lib/constants/navigation';
 import { NavigationProps } from '@/lib/types/layout';
 

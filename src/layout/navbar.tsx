@@ -23,17 +23,20 @@ export function NavBar({ isOpen, toggleOpen }: NavigationProps) {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-black text-lg font-medium dark:text-white"
-            >
-              {label}
-            </a>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            const isExternal = href.startsWith('http');
+            return (
+              <Link
+                key={label}
+                href={href}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
+                className="text-black text-lg font-medium dark:text-white hover:opacity-80 transition-opacity"
+              >
+                {label}
+              </Link>
+            );
+          })}
           <ConnectButton />
         </div>
 
@@ -45,12 +48,22 @@ export function NavBar({ isOpen, toggleOpen }: NavigationProps) {
             className="ml-4"
             aria-label="Toggle Menu"
           >
-            <div
-              className={`hamburger flex flex-col justify-between w-6 h-5 ${isOpen ? 'open' : ''}`}
-            >
-              <span className="line" />
-              <span className="line" />
-              <span className="line" />
+            <div className="flex flex-col justify-between w-6 h-5 relative">
+              <span
+                className={`w-full h-[3px] bg-neutral-800 dark:bg-white rounded-full transition-all duration-300 ease-in-out ${
+                  isOpen ? 'rotate-45 translate-y-[8px]' : ''
+                }`}
+              />
+              <span
+                className={`w-full h-[3px] bg-neutral-800 dark:bg-white rounded-full transition-all duration-300 ease-in-out ${
+                  isOpen ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              <span
+                className={`w-full h-[3px] bg-neutral-800 dark:bg-white rounded-full transition-all duration-300 ease-in-out ${
+                  isOpen ? '-rotate-45 -translate-y-[9px]' : ''
+                }`}
+              />
             </div>
           </button>
         </div>

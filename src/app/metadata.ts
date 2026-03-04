@@ -7,7 +7,7 @@ const siteConfig = {
   description:
     'Next.js dApp template with Tailwind CSS and RainbowKit built in TypeScript.',
   keywords:
-    'React, Next.js, Tailwind CSS, Sass, RainbowKit, Solidity, Hardhat, ethers.js, Blockchain, TypeScript',
+    'React, Next.js, Tailwind CSS, RainbowKit, Solidity, Hardhat, ethers.js, Blockchain, TypeScript',
   author: 'Matteo Celani',
   url: DOMAIN,
   image: `${DOMAIN}/img/logo.png`,
