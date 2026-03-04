@@ -5,7 +5,6 @@ Template for a decentralized application (dApp) built in [Next](https://nextjs.o
 - [TypeScript](https://www.typescriptlang.org)
 - [Next 15](https://nextjs.org/blog/next-15)
 - [TanStack Query](https://tanstack.com/query/latest)
-- [Sass](https://sass-lang.com)
 - [Tailwind CSS](https://tailwindcss.com)
 
 ### Web3 Packages

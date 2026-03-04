@@ -2,20 +2,19 @@
 
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import ThemeSwitch from '@/components/features/ThemeSwitch';
+import { ThemeSwitch } from '@/components/global/ThemeSwitch';
 
 export default function Home() {
   const { address, isConnected } = useAccount();
 
   useEffect(() => {
     if (isConnected) {
-      // eslint-disable-next-line no-console
-      console.log('Wallet address: ', address);
+      console.warn('Connected to:', address);
     } else {
-      // eslint-disable-next-line no-console
-      console.log('Not connected');
+      console.warn('Disconnected');
     }
-  }, [address, isConnected]);
+  }, [isConnected, address]);
+
 
   return (
     <div className="w-full flex flex-col">

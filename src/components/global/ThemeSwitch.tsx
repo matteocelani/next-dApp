@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { HiSun, HiMoon } from 'react-icons/hi';
 
-export default function ThemeSwitch({ className }: { className?: string }) {
+export function ThemeSwitch({ className }: { className?: string }) {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +14,7 @@ export default function ThemeSwitch({ className }: { className?: string }) {
 
   function switchTheme(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   if (!mounted) {

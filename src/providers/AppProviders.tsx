@@ -1,15 +1,17 @@
 'use client';
 
 import { type JSX } from 'react';
+import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import merge from 'lodash.merge';
 import { ThemeProvider } from 'next-themes';
 import { WagmiProvider } from 'wagmi';
-import { RainbowKitProvider, lightTheme, Theme } from '@rainbow-me/rainbowkit';
 import { wagmiConfig } from '@/lib/constants/wagmiConfig';
 
-const theme = merge(lightTheme(), {
+const baseTheme = lightTheme();
+const theme: Theme = {
+  ...baseTheme,
   colors: {
+    ...baseTheme.colors,
     accentColor: '#FF801F',
     accentColorForeground: '#fff',
     actionButtonSecondaryBackground: '#DADDD8',
@@ -19,7 +21,7 @@ const theme = merge(lightTheme(), {
     connectButtonText: '#000',
     connectButtonTextError: '#FF494A',
   },
-} as Theme);
+};
 
 const queryClient = new QueryClient();
 
@@ -27,7 +29,7 @@ type ProvidersProps = {
   children: JSX.Element | JSX.Element[] | string | null;
 };
 
-export default function Providers({ children }: ProvidersProps) {
+export function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       attribute="class"
